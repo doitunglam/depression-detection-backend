@@ -8,7 +8,17 @@ export class AppController {
 
   @Get()
   getHello(@Req() request: Request): string {
-    console.log(request['user']);
     return 'Hello' + request['user']?.email + '!';
+  }
+
+  @Get()
+  getDiagnose(@Req() request: Request): any {
+    return {
+      status: 200,
+      message: 'OK',
+      diagnose: {
+        result: 'Depressed',
+      },
+    };
   }
 }

@@ -7,11 +7,14 @@ import {
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PreauthMiddleware } from './auth/preauth.middleware';
+import { EvidenceModule } from './evidence/evidence.module';
+import { DatabaseModule } from './database/database.module';
+import { Database } from './database/database';
 
 @Module({
-  imports: [],
+  imports: [DatabaseModule, EvidenceModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, Database],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
