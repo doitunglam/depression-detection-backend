@@ -14,7 +14,6 @@ export class EvidenceController {
       request['user']?.user_id,
       createEvidenceDTO.url,
     );
-    console.log(evidence);
     if (evidence) {
       return {
         status: 200,

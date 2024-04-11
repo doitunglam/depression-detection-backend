@@ -18,7 +18,7 @@ const firebase_params = {
 
 @Injectable()
 export class PreauthMiddleware implements NestMiddleware {
-  private defaultApp: any;
+  public defaultApp: null | firebase.app.App;
 
   constructor() {
     this.defaultApp = firebase.initializeApp({

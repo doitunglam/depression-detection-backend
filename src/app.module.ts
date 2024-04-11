@@ -10,9 +10,10 @@ import { PreauthMiddleware } from './auth/preauth.middleware';
 import { EvidenceModule } from './evidence/evidence.module';
 import { DatabaseModule } from './database/database.module';
 import { Database } from './database/database';
+import { DiagnoseModule } from './diagnose/diagnose.module';
 
 @Module({
-  imports: [DatabaseModule, EvidenceModule],
+  imports: [DatabaseModule, EvidenceModule, DiagnoseModule],
   controllers: [AppController],
   providers: [AppService, Database],
 })
